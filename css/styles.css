@@ -587,8 +587,7 @@ margin-bottom: 16px;
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property: visibility, opacity, pointer-events;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -609,7 +608,8 @@ margin-bottom: 16px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-modal-btn {
@@ -619,25 +619,25 @@ margin-bottom: 16px;
     width: 24px;
         height: 24px;
         background-color: var(--CORNFLOWER, #E7E9FC);
-        
+        padding: 0;
         border: 1px solid rgba(0, 0, 0, 0.10);
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .close-modal-btn:hover,
 .close-modal-btn:focus {
     background-color: var(--OCEAN, #404BBF);
-    border-color: transparent;
+    border: none;
     fill: #FFFFFF;
 }
 
 .close-modal-icon {
-    /* fill: currentColor; */
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-text {
@@ -649,7 +649,7 @@ margin-bottom: 16px;
         /* 150% */
         letter-spacing: 0.32px;
     margin-bottom: 16px;
-    margin-top: 48px;
+
 
 }
 
@@ -664,8 +664,8 @@ margin-bottom: 16px;
     color: var(--LIGHT-SLATE, #8E8F99);
         font-size: 12px;
         font-weight: 400;
-        line-height: 14px;
         letter-spacing: 0.48px;
+        line-height: 1.17;
 }
 
 .modal-filed {
@@ -677,10 +677,10 @@ margin-bottom: 16px;
     width: 100%;
     border-radius: 4px;
     border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
-    outline: none;
     padding: 24px 24px 24px 62px;
     background-color: transparent;
-    
+    padding-left: 38px;
+    outline: transparent;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: border-color;
 }
@@ -700,13 +700,16 @@ margin-bottom: 16px;
 .modal-filed-icon {
     position: absolute;
     top: 50%;
-    left: 24px;
+    left: 16px;
     transform: translateY(-50%);
     fill: #2E2F42;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: fill;
 }
 
+.modal-textarea-wrapper {
+    margin-bottom: 24px;
+}
 
 .modal-textarea {
     width: 100%;
@@ -720,6 +723,12 @@ margin-bottom: 16px;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: border-color;
 
+    color: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.40));
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        background-color: transparent;
 }
 
 .modal-textarea:focus {
@@ -744,11 +753,11 @@ margin-bottom: 16px;
 .checkbox:checked+.checkbox_user>.checkbox-user-span {
     background-color: #404BBF;
     border: transparent;
-    fill: #fafafa;
+    fill: #F4F4FD;;
 }
 
 .checkbox-user-span {
-    border-radius: 4px;
+    border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.40);
     height: 16px;
     width: 16px;
@@ -757,6 +766,7 @@ margin-bottom: 16px;
     align-items: center;
     fill: transparent;
     margin-right: 8px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox-user-span svg {
@@ -764,22 +774,24 @@ margin-bottom: 16px;
 }
 
 .checkbox_user {
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: -0.02em;
-    color: rgba(64, 64, 64, 0.6);
+    
     cursor: pointer;
 
+    color: var(--LIGHT-SLATE, #8E8F99);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.17;
+            letter-spacing: 0.04em;
 }
 
 .checkbox-user-link {
-    color: #404BBF;
+    color: #4d5ae5;;
     text-decoration: underline;
 
 }
 
 .form-btn {
-    display: flex;
+    display: block;
         padding: 16px 32px;
         margin: 0 auto;
     align-items: center;
@@ -789,7 +801,7 @@ margin-bottom: 16px;
     height: 56px;
     
     border-radius: 4px;
-    border-color: transparent;
+    border: none;
     background: var(--IRIS, #4D5AE5);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 

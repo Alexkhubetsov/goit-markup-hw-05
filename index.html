@@ -532,7 +532,7 @@
           </p>
         </div>
 
-        <div>
+        <div class="footer-socials-div">
           <p class="footer-social-page">Social media</p>
           <ul class="footer-socials">
             <li class="footer-socials-item">
@@ -589,12 +589,35 @@
             </li>
           </ul>
         </div>
+        <div>
+          <p class="footer-social-page">Subscribe</p>
+          <form name="form-footer" autocomplete="off">
+            <label class="footer-label" for="user-email">
+              <input
+                class="footer-input"
+                id="user-email"
+                type="email"
+                name="user-email"
+                required
+                placeholder="E-mail"
+                pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+              />
+            </label>
+            <button class="footer-btn" type="submit">
+              Subscribe
+              <svg class="footer-btn-icon" height="24" width="24">
+                <use href="./images/icons.svg#icon-sub-tg"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
     <!-- #endregion footer -->
 
     <!-- #region Modal -->
-    <div class="backdrop is-open">
+    <div class="backdrop">
+      <!-- is-open -->
       <div class="modal">
         <button class="close-modal-btn" type="button">
           <svg class="close-modal-icon" height="8" width="8">
